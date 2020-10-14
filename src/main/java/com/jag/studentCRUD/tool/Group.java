@@ -1,4 +1,4 @@
-package tool;
+package com.jag.studentCRUD.tool;
 
 public enum Group {
 

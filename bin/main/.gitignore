@@ -1,6 +1,3 @@
-/application.properties
-/com/
-/endPoint/
-/model/
 /service/
-/tool/
+/endPoint/
+/com/

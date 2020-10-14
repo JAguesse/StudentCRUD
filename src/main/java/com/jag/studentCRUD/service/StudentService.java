@@ -1,19 +1,18 @@
-package service;
+package com.jag.studentCRUD.service;
 
 import org.springframework.stereotype.Service;
 
 import com.jag.studentCRUD.StudentCrudApplication;
-import com.sun.corba.se.spi.activation.Repository;
-
-import model.Student;
+import com.jag.studentCRUD.model.Student;
 
 @Service
 public class StudentService {
 	
 	public Student createStudent(int id, Student student) {
 		StudentCrudApplication.map.put(id,student); //(save, va faire un create or update)
+		student.updateId(id);
 		//tweetRepository.insert(tweet); (insert renverra une erreur si l'id existe déjà)
-		return new Student();
+		return StudentCrudApplication.map.get(id);
 	}
 	
 	public Student getStudent(String id) {
