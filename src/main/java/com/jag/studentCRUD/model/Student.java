@@ -2,8 +2,6 @@ package com.jag.studentCRUD.model;
 
 import java.time.LocalDateTime;
 
-import com.jag.studentCRUD.tool.Group;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,7 +19,7 @@ public class Student {
 	public String surname; 
 	public String email; 
 	public Integer age; 
-	public Group group; 
+	public String group; 
 	public String sex;
 	public Boolean retake;
 	
@@ -31,7 +29,7 @@ public class Student {
 		this.id=String.valueOf(id);
 	}
 
-	public Student(String name, String surname, String email, Integer age, Group group, String sex, Boolean retake) {
+	public Student(String name, String surname, String email, Integer age, String group, String sex, Boolean retake) {
 		super();
 		this.name = name;
 		this.surname = surname;
