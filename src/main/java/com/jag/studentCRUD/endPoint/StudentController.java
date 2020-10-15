@@ -29,6 +29,8 @@ public class StudentController {
 	public ResponseEntity<Student> addStudent(@RequestBody Student student) {
 		log.info(student.toString());
 		ArrayList<Integer> keyTab = new ArrayList<Integer>(StudentCrudApplication.map.keySet());
+		System.out.println("Tab : " + keyTab.toString());
+		System.out.println("Key : " + keyTab.get(keyTab.size()-1)+ 1);
 		return ResponseEntity.ok(studentService.createStudent(keyTab.get(keyTab.size()-1)+ 1, student));
 	}
 	@PutMapping("/student/update")
