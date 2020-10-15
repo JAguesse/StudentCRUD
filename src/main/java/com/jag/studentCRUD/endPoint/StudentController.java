@@ -55,6 +55,7 @@ public class StudentController {
 	@DeleteMapping("/student/remove/{id}")
 	public ResponseEntity<Student> deleteStudent(@PathVariable("id") String id){
 		log.info("ID DELETE : " + id);
+		System.out.println("Before delete " + StudentCrudApplication.map);
 		return ResponseEntity.ok(studentService.deleteStudent(id));
 	}
 	
@@ -62,6 +63,7 @@ public class StudentController {
 	@GetMapping("/student/all")
 	@ResponseBody
 	public ResponseEntity<List<Student>> getAllStudent(){
+		System.out.println("Getall " + StudentCrudApplication.map);
 		return ResponseEntity.ok(studentService.getAllStudents());
 	}
 	
