@@ -25,7 +25,7 @@ public class StudentService {
 	}
 
 	public Student deleteStudent(String id) {
-		return StudentCrudApplication.map.remove(id);
+		return StudentCrudApplication.map.remove(Integer.parseInt(id));
 	}
 	
 	public List<Student> getAllStudents(){
