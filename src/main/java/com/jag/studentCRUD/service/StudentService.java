@@ -12,6 +12,7 @@ public class StudentService {
 		StudentCrudApplication.map.put(id,student); //(save, va faire un create or update)
 		student.updateId(id);
 		//tweetRepository.insert(tweet); (insert renverra une erreur si l'id existe déjà)
+		System.out.println(student.toString());
 		return StudentCrudApplication.map.get(id);
 	}
 	

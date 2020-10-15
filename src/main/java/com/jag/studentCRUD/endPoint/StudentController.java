@@ -23,6 +23,10 @@ import lombok.extern.slf4j.Slf4j;
 public class StudentController {
 
 	StudentService studentService;
+	
+	public StudentController(){
+		this.studentService = new StudentService();
+	}
 
 	@PostMapping("/student")
 	@ResponseBody
