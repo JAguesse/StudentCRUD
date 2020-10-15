@@ -1,6 +1,7 @@
 package com.jag.studentCRUD.endPoint;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -46,7 +47,6 @@ public class StudentController {
 	@GetMapping("/student/{id}")
 	public ResponseEntity<Student> getStudent(@PathVariable("id") String id) {
 		log.info("ID GET : " + id);
-		System.out.println("estcequelalogcestdelamerde");
 		return ResponseEntity.ok(studentService.getStudent(id));
 		
 	} 
@@ -56,6 +56,13 @@ public class StudentController {
 	public ResponseEntity<Student> deleteStudent(@PathVariable("id") String id){
 		log.info("ID DELETE : " + id);
 		return ResponseEntity.ok(studentService.deleteStudent(id));
+	}
+	
+	
+	@GetMapping("/student/all")
+	@ResponseBody
+	public ResponseEntity<List<Student>> getAllStudent(){
+		return ResponseEntity.ok(studentService.getAllStudents());
 	}
 	
 

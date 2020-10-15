@@ -1,5 +1,8 @@
 package com.jag.studentCRUD.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.jag.studentCRUD.StudentCrudApplication;
@@ -23,6 +26,14 @@ public class StudentService {
 
 	public Student deleteStudent(String id) {
 		return StudentCrudApplication.map.remove(id);
+	}
+	
+	public List<Student> getAllStudents(){
+		ArrayList<Student> students = new ArrayList<Student>();
+		for(Integer key : StudentCrudApplication.map.keySet()) {
+			students.add(StudentCrudApplication.map.get(key));
+		}
+		return students;
 	}
 
 	public void updateStudent(Student student) {
