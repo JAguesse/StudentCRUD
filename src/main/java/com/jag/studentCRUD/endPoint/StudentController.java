@@ -30,8 +30,8 @@ public class StudentController {
 		log.info(student.toString());
 		ArrayList<Integer> keyTab = new ArrayList<Integer>(StudentCrudApplication.map.keySet());
 		System.out.println("Tab : " + keyTab.toString());
-		System.out.println("Key : " +keyTab.get(keyTab.size())+1);
-		return ResponseEntity.ok(studentService.createStudent(keyTab.get(keyTab.size())+1, student));
+		System.out.println("Key : " + ((keyTab.isEmpty())? 1 : keyTab.get(keyTab.size())+1));
+		return ResponseEntity.ok(studentService.createStudent((keyTab.isEmpty())? 1 : keyTab.get(keyTab.size())+1, student));
 	}
 	@PutMapping("/student/update")
 	@ResponseBody
